@@ -9,6 +9,7 @@ RUN apt-get update \
       rsync \
       tar \
       wget \
+      nasm \
   && apt-get clean
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.17.5/cmake-3.17.5-Linux-x86_64.sh \
@@ -25,6 +26,17 @@ RUN pip install "pybind11[global]" \
   && make clean \
   && cd ../../ \
   && rm RxCpp -rf
+
+RUN git clone --recursive https://github.com/libjpeg-turbo/libjpeg-turbo.git \
+  && cd libjpeg-turbo \
+  && mkdir build \
+  && cd build \
+  && cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. \
+  && make -j8 \
+  && make install \
+  && make clean \
+  && cd ../.. \
+  && rm libjpeg-turbo -rf
 
 RUN ( \
     echo 'PermitRootLogin yes'; \

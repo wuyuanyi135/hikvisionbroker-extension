@@ -159,7 +159,6 @@ void camera::compose_process_pipeline() {
     auto observable =
         process_pipeline
             .get_observable()
-            .observe_on(rx::observe_on_new_thread())
             .tap([&](raw_frame &frame) {
                 raw_frame_mutex.lock();
             })
