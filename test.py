@@ -7,7 +7,7 @@ def callback(x):
 
 camera = hikvisionbroker_extension.Camera(0)
 camera.register_callback(callback)
-camera.set_frame_rate(20.)
+camera.set_frame_rate(50.)
 camera.start_acquisition()
 time.sleep(3)
 camera.stop_acquisition()

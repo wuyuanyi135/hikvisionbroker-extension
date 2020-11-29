@@ -8,6 +8,7 @@
 #include <cstring>
 #include <exception>
 #include <iostream>
+#include <jpeglib.h>
 #include <stdexcept>
 
 void __stdcall image_callback(unsigned char *pData, MV_FRAME_OUT_INFO_EX *pFrameInfo, void *pUser) {
@@ -167,7 +168,7 @@ void camera::compose_process_pipeline() {
     // preview line
     auto preview_line_observable =
         observable
-            .observe_on(rx::observe_on_new_thread())
+//            .observe_on(rx::observe_on_new_thread())
             .map([&](raw_frame &frame) -> std::vector<u_char> & {
                 save_jpeg(preview_mutex, frame, preview_jpeg, preview_jpeg_quality, "Failed to convert preview jpeg");
                 return preview_jpeg;
@@ -175,7 +176,7 @@ void camera::compose_process_pipeline() {
     // original line
     auto original_line_observable =
         observable
-//            .observe_on(rx::observe_on_new_thread())
+            //            .observe_on(rx::observe_on_new_thread())
             .map([&](raw_frame &frame) -> std::vector<u_char> & {
                 save_jpeg(original_mutex, frame, original_jpeg, original_jpeg_quality, "Failed to convert original jpeg");
                 return original_jpeg;
@@ -214,28 +215,45 @@ void camera::compose_process_pipeline() {
 void camera::save_jpeg(std::mutex &mutex, raw_frame &frame, std::vector<u_char> &jpeg_buffer, int quality, const char *failure_message) {
     std::lock_guard<std::mutex> lock(mutex);
     const MV_FRAME_OUT_INFO_EX &frame_info = frame.frame_info;
-    MV_SAVE_IMAGE_PARAM_EX param;
-    memset(&param, 0, sizeof(MV_SAVE_IMAGE_PARAM_EX));
-    const int buffer_size = frame_info.nWidth * frame_info.nHeight * 4 + 2048;
-    jpeg_buffer.resize(buffer_size);
-    param.enImageType = MV_Image_Jpeg;
-    param.enPixelType = frame_info.enPixelType;
-    param.nBufferSize = buffer_size;
-    param.nWidth = frame_info.nWidth;
-    param.nHeight = frame_info.nHeight;
-    param.pData = frame.frame.data();
-    param.nDataLen = frame_info.nFrameLen;
-    param.pImageBuffer = jpeg_buffer.data();
-    param.nJpgQuality = quality;
 
-    std::cout.flush();
-    int nRet = MV_CC_SaveImageEx(&param);
+    struct jpeg_compress_struct cinfo;
+    struct jpeg_error_mgr jerr;
 
-    if (MV_OK != nRet) {
-        throw std::runtime_error(failure_message);
+    JSAMPROW row_pointer[1];
+    int row_stride;
+
+    cinfo.err = jpeg_std_error(&jerr);
+
+    jpeg_create_compress(&cinfo);
+    cinfo.image_width = frame_info.nWidth;
+    cinfo.image_height = frame_info.nHeight;
+
+    cinfo.input_components = 1;
+    cinfo.in_color_space = JCS_GRAYSCALE;
+
+    jpeg_set_defaults(&cinfo);
+    jpeg_set_quality(&cinfo, quality, TRUE);
+
+    unsigned long outsize = 0;
+    unsigned char * outbuffer = nullptr;
+
+    jpeg_mem_dest(&cinfo, &outbuffer, &outsize);
+    jpeg_start_compress(&cinfo, TRUE);
+
+    row_stride = frame_info.nWidth;
+
+    while (cinfo.next_scanline < cinfo.image_height) {
+        row_pointer[0] = &frame.frame[cinfo.next_scanline * row_stride];
+        jpeg_write_scanlines(&cinfo, row_pointer, 1);
     }
 
-    jpeg_buffer.resize(param.nImageLen);
+    jpeg_finish_compress(&cinfo);
+    jpeg_destroy_compress(&cinfo);
+
+    jpeg_buffer.resize(outsize);
+    memcpy(jpeg_buffer.data(), outbuffer, outsize);
+
+    free(outbuffer);
 }
 
 void raw_frame::copy_frame(u_char *data, MV_FRAME_OUT_INFO_EX *frame_info) {
