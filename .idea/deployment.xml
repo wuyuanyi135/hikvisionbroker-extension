@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="localhost 3922" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Hikvision Docker (1044078d-19f2-4434-9130-017032a1a457)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.0MJLom2mb5" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="Hikvision Docker workstation (b10147ee-d08e-41fe-9c81-f9634eb6386e)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.j4R5URCZob" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="Workstation LAN (86857b77-6fd9-45dc-8c5e-c4e843a11feb)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.ppHHFf2gbv" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="Workstation WAN (06340957-9226-4c04-9698-197d7c3d2ab2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.RU3E3ZXCnU" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="localhost 3922">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/hikvisionbroker-extension" local="$PROJECT_DIR$" web="" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
