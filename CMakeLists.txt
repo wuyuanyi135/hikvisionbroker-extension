@@ -21,9 +21,4 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE VERSION_INFO=${EXAMPLE_VERSIO
 #set_target_properties(${PROJECT_NAME}  PROPERTIES LINK_FLAGS "-Wl,-rpath=/opt/MVS/lib/64 -Wl,--disable-new-dtags")
 target_link_libraries(${PROJECT_NAME} PRIVATE pthread MvCameraControl)
 
-add_library(mainlib SHARED mainlib.cpp)
-#set_target_properties(mainlib PROPERTIES LINK_FLAGS "-Wl,-rpath=/opt/MVS/lib/64 -Wl,--disable-new-dtags")
-target_link_libraries(mainlib PRIVATE pthread MvCameraControl)
 
-add_executable(main main.cpp)
-target_link_libraries(main mainlib)
