@@ -52,7 +52,7 @@ RUN ( \
   && mkdir /run/sshd
 
 RUN echo 'root:Docker!' | chpasswd
-
+VOLUME /etc/ssh
 CMD ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config_test_clion"]
 
 

@@ -23,3 +23,6 @@ services:
       - "3922:22"
     volumes:
       - "/opt/MVS:/opt/MVS"
+      - "hikvisionbroker-ssh:/etc/ssh"
+volumes:
+  hikvisionbroker-ssh:
