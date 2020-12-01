@@ -11,9 +11,9 @@
 #include <mutex>
 #include <pybind11/pybind11.h>
 #include <queue>
+#include <rxcpp/rx.hpp>
 #include <string>
 #include <thread>
-#include <rxcpp/rx.hpp>
 #include <vector>
 namespace py = pybind11;
 namespace rx = rxcpp;
@@ -21,7 +21,7 @@ namespace rx = rxcpp;
 struct raw_frame {
     std::vector<u_char> frame;
     MV_FRAME_OUT_INFO_EX frame_info;
-    void copy_frame(u_char* data, MV_FRAME_OUT_INFO_EX* frame_info);
+    void copy_frame(u_char *data, MV_FRAME_OUT_INFO_EX *frame_info);
 };
 
 class camera {
@@ -89,7 +89,7 @@ class camera {
     static void check_error(int ret, const std::string &fail_message);
 
  private:
-
+    rx::observe_on_one_worker worker = rx::observe_on_new_thread();
     void compose_process_pipeline();
     void save_jpeg(std::mutex &mutex, raw_frame &frame, std::vector<u_char> &jpeg_buffer, int quality, const char *failure_message);
 };

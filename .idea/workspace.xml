@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="hikvisionbroker_extension" targetName="hikvisionbroker_extension" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Hikvision Docker workstation" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="abbd7564-97c5-49f1-acde-70cf815a6106" name="Default Changelist" comment="development: Save ssh to a volume to prevent fingerprint change">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/remote-mappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/camera.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="545b892b-a86d-4b95-a2a8-6f90945d2da4" />
+  <component name="ProjectId" id="1kxXZyhAZ0bYMdKF0d07guOM8Qf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="cf.advertisement.text.overridden" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wuyua\Projects\CLionProjects\hikvisionbroker-extension\extra" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml.develop: Compose Deployment">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hikvisionbroker_extension" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hikvisionbroker_extension" TARGET_NAME="hikvisionbroker_extension" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="docker-compose.yml.develop: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker-workstation">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="develop" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.hikvisionbroker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker-workstation">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="hikvisionbroker" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.hikvisionbroker_extension" />
+      <item itemvalue="Docker.docker-compose.yml.develop: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.hikvisionbroker: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.develop: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.hikvisionbroker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abbd7564-97c5-49f1-acde-70cf815a6106" name="Default Changelist" comment="" />
+      <created>1606717110324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606717110324</updated>
+      <workItem from="1606717112489" duration="2051000" />
+      <workItem from="1606787616909" duration="871000" />
+      <workItem from="1606788743847" duration="2729000" />
+      <workItem from="1606791503950" duration="587000" />
+    </task>
+    <task id="LOCAL-00001" summary="Working development. Maybe the callback is still on main thread so it will be jammed when firing the callback.">
+      <created>1606788511367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606788511367</updated>
+    </task>
+    <task id="LOCAL-00002" summary="development: Save ssh to a volume to prevent fingerprint change">
+      <created>1606791056518</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606791056518</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working development. Maybe the callback is still on main thread so it will be jammed when firing the callback." />
+    <MESSAGE value="development: Save ssh to a volume to prevent fingerprint change" />
+    <option name="LAST_COMMIT_MESSAGE" value="development: Save ssh to a volume to prevent fingerprint change" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="70" key="#Deployment" timestamp="1606791550708">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1606791550708" />
+    <state x="344" y="57" key="#SSH_Configurations" timestamp="1606791445100">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="344" y="57" key="#SSH_Configurations/0.0.1536.824@0.0.1536.824" timestamp="1606791445100" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606791308267">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606791308267" />
+    <state x="50" y="0" key="CommitChangelistDialog2" timestamp="1606792092339">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="50" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606792092339" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606683506064">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606683506064" />
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog" timestamp="1606788659357">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1606788659357" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606791476826">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606791476826" />
+    <state width="746" height="210" key="GridCell.Tab.0.bottom" timestamp="1606711708494">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606711708494" />
+    <state width="746" height="210" key="GridCell.Tab.0.center" timestamp="1606711708494">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606711708494" />
+    <state width="746" height="210" key="GridCell.Tab.0.left" timestamp="1606711708493">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606711708493" />
+    <state width="746" height="210" key="GridCell.Tab.0.right" timestamp="1606711708494">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606711708494" />
+    <state x="505" y="114" key="RollbackChangesDialog" timestamp="1606683140701">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="505" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606683140701" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1606791517377">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606791517377" />
+    <state x="93" y="93" width="1350" height="638" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606789567340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1606789567340" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606792077523">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606792077523" />
+  </component>
+</project>

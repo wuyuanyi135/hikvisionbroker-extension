@@ -168,6 +168,7 @@ void camera::compose_process_pipeline() {
     auto observable =
         process_pipeline
             .get_observable()
+            .observe_on(worker)
             .tap([&](raw_frame &frame) {
                 raw_frame_mutex.lock();
             })
@@ -176,7 +177,6 @@ void camera::compose_process_pipeline() {
     // preview line
     auto preview_line_observable =
         observable
-//            .observe_on(rx::observe_on_new_thread())
             .map([&](raw_frame &frame) -> std::vector<u_char> & {
                 save_jpeg(preview_mutex, frame, preview_jpeg, preview_jpeg_quality, "Failed to convert preview jpeg");
                 return preview_jpeg;
