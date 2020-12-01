@@ -83,18 +83,26 @@ void camera::set_io_configuration(int line_selector, bool line_inverter, int str
     int ret = MV_CC_SetEnumValue(handle, "LineSelector", line_selector);
     check_error(ret, "Failed to set line selector");
 
-    ret = MV_CC_SetEnumValue(handle, "LineInverter", line_inverter);
+    ret = MV_CC_SetEnumValue(handle, "LineMode", 8); // strobe
+    check_error(ret, "Failed to set line mode to strobe");
+
+    ret = MV_CC_SetBoolValue(handle, "LineInverter", line_inverter);
     check_error(ret, "Failed to set line inverter");
 
     ret = MV_CC_SetBoolValue(handle, "StrobeEnable", bool(strobe_enable));
     check_error(ret, "Failed to set strobe enable");
 
-    ret = MV_CC_SetIntValue(handle, "StrobeLineDuration", strobe_line_duration);
-    check_error(ret, "Failed to set strobe duration");
+    set_line_duration(strobe_line_duration);
 
     ret = MV_CC_SetIntValue(handle, "StrobeLineDelay", strobe_line_delay);
     check_error(ret, "Failed to set strobe delay");
 }
+
+void camera::set_line_duration(int duration) {
+    int ret = MV_CC_SetIntValue(handle, "StrobeLineDuration", duration);
+    check_error(ret, "Failed to set strobe duration");
+}
+
 
 void camera::start_acquisition() {
     int ret = MV_CC_StartGrabbing(handle);

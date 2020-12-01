@@ -55,6 +55,9 @@ class camera {
         int strobe_line_duration = 20,
         int strobe_line_delay = 0);
 
+    /// Dedicated line duration setter in case the camera is driving the LED directly.
+    void set_line_duration(int duration);
+
  public:
     void start_acquisition();
     void stop_acquisition();

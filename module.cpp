@@ -17,6 +17,7 @@ PYBIND11_MODULE(hikvisionbroker_extension, m) {
              py::arg("strobe_enable") = 1,
              py::arg("strobe_line_duration") = 20,
              py::arg("strobe_line_delay") = 0)
+        .def("set_line_duration", &camera::set_line_duration)
         .def("start_acquisition", &camera::start_acquisition)
         .def("stop_acquisition", &camera::stop_acquisition)
         .def("set_jpeg_quality", &camera::set_jpeg_quality)

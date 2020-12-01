@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  hikvisionbroker:
+    image: hikvisionbroker:latest
+    build:
+      context: .
+      target: release
+    privileged: true
+    ports:
+      - "8952:8080"
+    volumes:
+      - "/opt/MVS:/opt/MVS"
+
+  develop:
+    image: hikvisionbroker-dev:latest
+    build:
+      context: .
+      target: development
+    privileged: true
+    ports:
+      - "8952:8080"
+      - "3922:22"
+    volumes:
+      - "/opt/MVS:/opt/MVS"
