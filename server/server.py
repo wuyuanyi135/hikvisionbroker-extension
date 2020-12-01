@@ -124,6 +124,7 @@ async def stop_acquisition(request):
 async def stream_original(request):
     await stream(request, original_subject)
 
+
 @routes.get('/preview_stream')
 async def stream_preview(request):
     await stream(request, preview_subject)
@@ -161,7 +162,6 @@ async def stream(request, subject):
 
 
 def callback(jpeg_tuple):
-
     preview, original = jpeg_tuple
     preview_subject.on_next(preview)
     original_subject.on_next(original)
@@ -194,7 +194,10 @@ def aiohttp_server():
     runner = web.AppRunner(app)
     return runner
 
+
 loop = asyncio.new_event_loop()
+
+
 def run_server(runner):
     port = os.getenv("SERVER_PORT", 8080)
 
@@ -206,17 +209,11 @@ def run_server(runner):
 
 
 def main():
-    t = threading.Thread(target=run_server, args=(aiohttp_server(),))
-    t.setDaemon(True)
-    t.start()
-
     try:
-        t.join()
+        run_server(aiohttp_server())
     except KeyboardInterrupt:
         print("Finalizing")
         loop.stop()
-        loop.call_soon_threadsafe(lambda: loop.stop())
-        t.join()
         try:
             camera.stop_acquisition()
         except:
