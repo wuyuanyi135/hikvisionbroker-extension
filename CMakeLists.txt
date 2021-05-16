@@ -1,6 +1,6 @@
 project(hikvisionbroker_extension C CXX)
-cmake_minimum_required(VERSION 3.17)
-
+cmake_minimum_required(VERSION 3.13)
+set (CMAKE_CXX_STANDARD 14)
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 include_directories(${Python3_INCLUDE_DIRS})
 
@@ -15,7 +15,8 @@ link_directories(${TURBOJPEG_LIBDIR})
 include_directories(${TURBOJPEG_INCLUDE_DIRS})
 
 # MVS SDK
-set(MVS_RUNTIME_LIB /opt/MVS/lib/64)
+message("MVS Library Path: $ENV{LD_LIBRARY_PATH}")
+set(MVS_RUNTIME_LIB $ENV{LD_LIBRARY_PATH})
 link_directories(${MVS_RUNTIME_LIB})
 include_directories(/opt/MVS/include)
 
